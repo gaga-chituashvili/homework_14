@@ -15,6 +15,24 @@ text.style.color=`#ffff00`
 
 
 let circle = document.querySelector(`.circle`);
+document.body.appendChild(circle);
+
+
+let button = document.createElement(`button`);
+button.textContent =`DELETE CIRCLE`
+document.body.appendChild(button);
+button.classList.add(`button`);
+
+button.addEventListener(`click`, ()=>{
+    if(button.textContent === ` DELETE CIRCLE`){
+        button.textContent = `RETURN`;
+        circle.style.display=`none`;
+    }else{button.textContent = `DELETE CIRCLE`
+    }
+});
+
+
+
 
 
 
@@ -23,5 +41,7 @@ let circle = document.querySelector(`.circle`);
 let box = document.querySelector(`.box`);
 box.appendChild(title);
 box.appendChild(text);
+box.appendChild(circle);
+box.appendChild(button);
 
 
