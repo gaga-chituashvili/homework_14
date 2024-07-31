@@ -10,12 +10,28 @@ let text = document.createElement(`p`);
 text.textContent =`ვენეცია ვენეტოს რეგიონის დედაქალია. სახელი მომდინარეობს აქ მაცხოვრებელი ანტიკური პერიოდის ხალხისგან, რომლებსაც ვენეტები ეწოდებოდათ.`;
 document.body.appendChild(text);
 text.classList.add(`Text`);
+text.style.textAlign=`center`;
 text.style.fontSize=`20px`;
 text.style.color=`#ffff00`
 
 
-let circle = document.querySelector(`.circle`);
-document.body.appendChild(circle);
+
+let circle = document.createElement(`section`);
+circle.classList.add(`circle`);
+
+
+
+circle.onmouseover = function() {mouseOver()};
+circle.onmouseout = function() {mouseOut()};
+
+function mouseOver() {
+  circle.style.backgroundColor =`red`;
+}
+
+function mouseOut() {
+    circle.style.backgroundColor =`yellow`;
+  }
+
 
 
 let button = document.createElement(`button`);
@@ -24,16 +40,19 @@ document.body.appendChild(button);
 button.classList.add(`button`);
 
 button.addEventListener(`click`, ()=>{
-    if(button.textContent === ` DELETE CIRCLE`){
+    if(button.textContent === `DELETE CIRCLE`){
         button.textContent = `RETURN`;
-        circle.style.display=`none`;
-    }else{button.textContent = `DELETE CIRCLE`
+        circle.style.display = `none`;
+        button.style.backgroundColor =`brown`;
+        button.style.marginTop=`100px`;
     }
-});
-
-
-
-
+    else{
+        button.textContent =`DELETE CIRCLE`;
+        button.style.backgroundColor =`red`;
+        circle.style.display =`block`;
+        button.style.marginTop=`0`;
+    }
+})
 
 
 
@@ -45,8 +64,5 @@ box.appendChild(circle);
 box.appendChild(button);
 
 
-
-
-//ვერ მოვასწარი დამთავრება დავამთავრებ დღის ბოლომდე
 
 
