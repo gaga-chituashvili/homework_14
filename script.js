@@ -45,3 +45,8 @@ box.appendChild(circle);
 box.appendChild(button);
 
 
+
+
+//ვერ მოვასწარი დამთავრება დავამთავრებ დღის ბოლომდე
+
+
